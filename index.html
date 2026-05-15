@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GobernIA — Tu Equipo Especializado en Contratación Pública</title>
+<meta name="description" content="GobernIA es tu equipo especializado en contratación pública, subvenciones e integración de IA en tareas administrativas. Primera consulta gratuita. Servicio en todo el territorio nacional.">
+<meta name="keywords" content="contratación pública, licitaciones, subvenciones, LCSP, consultoría administrativa, inteligencia artificial, transformación digital, Comunitat Valenciana">
+<meta name="author" content="GobernIA">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://goberconsult.com">
+<meta property="og:title" content="GobernIA — Tu Equipo Especializado en Contratación Pública">
+<meta property="og:description" content="Consultoría especializada en contratación pública, subvenciones e integración de IA. Excelencia y optimización administrativa. Primera consulta gratuita.">
+<meta property="og:image" content="https://goberconsult.com/og-image.png">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="GobernIA">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--green-dark:#073710;--green-main:#2D5A3D;--green-mid:#4A7C5F;--green-light:#B8D4BC;--gold:#C8A870;--gold-light:#E2C99A;--navy:#000060;--ivory:#F5F5F0;--white:#FFFFFF;--text-dark:#1A2E1E;--text-mid:#3D5C45;--text-light:#8AAD92}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--ivory);color:var(--text-dark);overflow-x:hidden}
+
+.lang-toggle{position:fixed;top:20px;right:24px;z-index:1000;display:flex;gap:2px;background:rgba(7,55,16,0.9);backdrop-filter:blur(8px);border-radius:30px;padding:4px;border:1px solid rgba(200,168,112,0.3)}
+.lang-btn{padding:6px 13px;border:none;border-radius:24px;font-family:'Outfit',sans-serif;font-size:11px;font-weight:500;letter-spacing:.08em;cursor:pointer;transition:all .25s;color:var(--green-light);background:transparent}
+.lang-btn.active{background:var(--gold);color:var(--green-dark)}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:0 60px;height:72px;display:flex;align-items:center;justify-content:space-between;transition:background .4s,box-shadow .4s}
+nav.scrolled{background:rgba(7,55,16,.97);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(200,168,112,.2)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:var(--white);letter-spacing:.04em;text-decoration:none}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:36px;list-style:none;align-items:center}
+.nav-links a{font-size:13px;font-weight:400;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.75);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{padding:10px 24px;background:var(--gold)!important;color:var(--green-dark)!important;border-radius:3px;font-weight:600!important}
+.nav-cta:hover{background:var(--gold-light)!important}
+
+#hero{min-height:100vh;background:var(--green-dark);position:relative;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 70% 50%,rgba(45,90,61,.5) 0%,transparent 70%),radial-gradient(ellipse 40% 50% at 10% 80%,rgba(200,168,112,.08) 0%,transparent 60%)}
+.hero-lines{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.hero-lines::before{content:'';position:absolute;top:-20%;right:8%;width:1px;height:140%;background:linear-gradient(to bottom,transparent,rgba(200,168,112,.25),transparent);transform:rotate(12deg)}
+.hero-lines::after{content:'';position:absolute;top:-20%;right:14%;width:1px;height:140%;background:linear-gradient(to bottom,transparent,rgba(200,168,112,.1),transparent);transform:rotate(12deg)}
+.hero-content{position:relative;z-index:2;padding:140px 60px 100px;max-width:780px}
+.hero-label{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:32px;opacity:0;animation:fadeUp .8s ease .2s forwards}
+.hero-label::before{content:'';width:32px;height:1px;background:var(--gold)}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,7vw,88px);font-weight:300;line-height:1.05;color:var(--white);margin-bottom:12px;opacity:0;animation:fadeUp .9s ease .4s forwards}
+.hero-title em{font-style:italic;color:var(--gold)}
+.hero-subtitle{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,32px);font-weight:300;font-style:italic;color:var(--green-light);margin-bottom:48px;opacity:0;animation:fadeUp .9s ease .6s forwards;letter-spacing:.02em}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:fadeUp .9s ease .8s forwards}
+.btn-primary{padding:16px 40px;background:var(--gold);color:var(--green-dark);font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:none;border-radius:3px;cursor:pointer;text-decoration:none;display:inline-block;transition:all .3s}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(200,168,112,.3)}
+.btn-secondary{padding:15px 40px;background:transparent;color:var(--white);font-family:'Outfit',sans-serif;font-size:13px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,.3);border-radius:3px;cursor:pointer;text-decoration:none;display:inline-block;transition:all .3s}
+.btn-secondary:hover{border-color:var(--gold);color:var(--gold)}
+.hero-stats{position:absolute;bottom:60px;right:60px;display:flex;gap:48px;opacity:0;animation:fadeUp .9s ease 1s forwards}
+.hero-stat{text-align:right}
+.hero-stat-num{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:600;color:var(--gold);line-height:1}
+.hero-stat-label{font-size:11px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--green-light);margin-top:4px}
+.scroll-indicator{position:absolute;bottom:32px;left:60px;display:flex;align-items:center;gap:12px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);opacity:0;animation:fadeUp 1s ease 1.2s forwards}
+.scroll-line{width:40px;height:1px;background:rgba(255,255,255,.2);position:relative;overflow:hidden}
+.scroll-line::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:var(--gold);animation:scrollLine 2s ease-in-out infinite}
+@keyframes scrollLine{0%{left:-100%}100%{left:100%}}
+
+#problema{padding:120px 60px;background:var(--ivory)}
+.section-header{display:flex;align-items:flex-start;gap:24px;margin-bottom:72px}
+.section-tag{font-size:11px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);padding-top:8px;min-width:140px}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5vw,60px);font-weight:300;line-height:1.1;color:var(--text-dark)}
+.section-title strong{font-weight:600;color:var(--green-main)}
+.problems-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2px}
+.problem-card{padding:48px 40px;background:var(--white);border-top:3px solid transparent;transition:border-color .3s,transform .3s;position:relative;overflow:hidden}
+.problem-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(45,90,61,.03) 0%,transparent 60%);opacity:0;transition:opacity .3s}
+.problem-card:hover{border-top-color:var(--gold);transform:translateY(-4px)}
+.problem-card:hover::before{opacity:1}
+.problem-num{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:300;color:rgba(45,90,61,.12);line-height:1;margin-bottom:16px}
+.problem-title{font-size:17px;font-weight:600;color:var(--text-dark);margin-bottom:12px}
+.problem-desc{font-size:14px;font-weight:300;line-height:1.7;color:var(--text-mid)}
+
+#servicios{padding:120px 60px;background:var(--green-dark);position:relative;overflow:hidden}
+#servicios::before{content:'';position:absolute;top:0;right:0;width:40%;height:100%;background:radial-gradient(ellipse at 80% 50%,rgba(45,90,61,.4) 0%,transparent 70%)}
+#servicios .section-title{color:var(--white)}
+#servicios .section-tag{color:var(--gold)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;position:relative;z-index:2}
+.service-card{padding:52px 44px;border:1px solid rgba(200,168,112,.15);border-radius:2px;position:relative;transition:all .4s;background:rgba(255,255,255,.02);overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--gold),transparent);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.service-card:hover{border-color:rgba(200,168,112,.4);background:rgba(255,255,255,.05);transform:translateY(-6px)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-icon{width:52px;height:52px;border:1px solid rgba(200,168,112,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:28px;font-size:20px}
+.service-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--white);margin-bottom:16px;line-height:1.2}
+.service-desc{font-size:14px;font-weight:300;line-height:1.8;color:var(--green-light);margin-bottom:28px}
+.service-features{list-style:none;display:flex;flex-direction:column;gap:8px}
+.service-features li{font-size:13px;font-weight:400;color:rgba(184,212,188,.8);display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+.service-features li::before{content:'';width:16px;height:1px;background:var(--gold);flex-shrink:0;margin-top:9px}
+
+#nosotros{padding:120px 60px;background:var(--white)}
+.nosotros-inner{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center}
+.nosotros-box{aspect-ratio:4/5;background:var(--green-dark);border-radius:2px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.nosotros-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 30%,rgba(45,90,61,.6) 0%,transparent 60%),radial-gradient(ellipse at 80% 80%,rgba(200,168,112,.15) 0%,transparent 50%)}
+.nosotros-monogram{font-family:'Cormorant Garamond',serif;font-size:160px;font-weight:300;color:rgba(200,168,112,.15);line-height:1;position:relative;z-index:1;user-select:none}
+.nosotros-accent{position:absolute;bottom:-20px;right:-20px;width:120px;height:120px;border:2px solid var(--gold);border-radius:2px;opacity:.4}
+.nosotros-text .section-header{flex-direction:column;gap:8px;margin-bottom:32px}
+.nosotros-body{font-size:15px;font-weight:300;line-height:1.9;color:var(--text-mid);margin-bottom:40px}
+.nosotros-values{display:flex;flex-direction:column;gap:16px}
+.value-item{display:flex;align-items:flex-start;gap:16px;padding:20px 24px;background:var(--ivory);border-left:2px solid var(--gold)}
+.value-title{font-size:13px;font-weight:600;color:var(--text-dark);margin-bottom:2px;text-transform:uppercase;letter-spacing:.06em}
+.value-desc{font-size:13px;font-weight:300;color:var(--text-mid);line-height:1.5}
+
+#contacto{padding:120px 60px;background:var(--ivory)}
+.contact-inner{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start}
+.contact-info .section-header{flex-direction:column;gap:8px;margin-bottom:32px}
+.contact-body{font-size:15px;font-weight:300;line-height:1.8;color:var(--text-mid);margin-bottom:48px}
+.contact-details{display:flex;flex-direction:column;gap:20px}
+.contact-detail{display:flex;align-items:flex-start;gap:16px}
+.contact-detail-icon{width:40px;height:40px;background:var(--green-dark);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.contact-detail-text strong{display:block;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+.contact-detail-text span{font-size:14px;font-weight:300;color:var(--text-mid)}
+
+.contact-form{background:var(--white);padding:56px 52px;box-shadow:0 2px 60px rgba(0,0,0,.06);position:relative}
+.contact-form::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--green-main),var(--gold))}
+.form-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--text-dark);margin-bottom:36px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group.full{grid-column:1/-1}
+label{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-mid)}
+input,select,textarea{width:100%;padding:14px 16px;border:1px solid #E0E5E1;background:var(--ivory);font-family:'Outfit',sans-serif;font-size:14px;font-weight:300;color:var(--text-dark);border-radius:2px;transition:border-color .2s,box-shadow .2s;outline:none;appearance:none}
+input:focus,select:focus,textarea:focus{border-color:var(--green-main);box-shadow:0 0 0 3px rgba(45,90,61,.08);background:var(--white)}
+textarea{resize:vertical;min-height:110px}
+select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234A7C5F' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+
+.rgpd-group{grid-column:1/-1;display:flex;align-items:flex-start;gap:12px;padding:16px 18px;background:var(--ivory);border:1px solid #E0E5E1;border-radius:2px}
+.rgpd-group input[type="checkbox"]{width:18px;height:18px;min-width:18px;padding:0;margin-top:3px;cursor:pointer;accent-color:var(--green-main)}
+.rgpd-text{font-size:12px;font-weight:300;line-height:1.6;color:var(--text-mid);text-transform:none;letter-spacing:0}
+.rgpd-text a{color:var(--green-main);text-decoration:underline}
+
+.form-submit{grid-column:1/-1;margin-top:8px}
+.form-submit button{width:100%;padding:18px;background:var(--green-dark);color:var(--white);font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border:none;border-radius:2px;cursor:pointer;transition:all .3s;position:relative;overflow:hidden}
+.form-submit button::before{content:'';position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.form-submit button:hover::before{transform:scaleX(1)}
+.form-submit button span{position:relative;z-index:1}
+.form-submit button:hover span{color:var(--green-dark)}
+.form-note{grid-column:1/-1;font-size:12px;font-weight:300;color:var(--text-light);text-align:center;margin-top:4px}
+
+.form-success{display:none;text-align:center;padding:48px 24px}
+.form-success-icon{font-size:48px;margin-bottom:16px}
+.form-success h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--green-main);margin-bottom:12px}
+.form-success p{font-size:15px;font-weight:300;color:var(--text-mid);margin-bottom:24px}
+.btn-calendar{display:inline-flex;align-items:center;gap:10px;padding:14px 32px;background:var(--gold);color:var(--green-dark);font-family:'Outfit',sans-serif;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:3px;transition:all .3s}
+.btn-calendar:hover{background:var(--gold-light);transform:translateY(-2px)}
+
+
+/* ─── FOOTER ─── */
+footer{padding:60px;background:var(--green-dark);border-top:1px solid rgba(200,168,112,.2)}
+.footer-top{display:flex;align-items:flex-start;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08)}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--white)}
+.footer-logo span{color:var(--gold)}
+.footer-tagline{font-size:13px;font-weight:300;color:rgba(255,255,255,.45);margin-top:4px}
+.footer-social{display:flex;align-items:center;gap:12px;margin-top:14px}
+.footer-social a{display:flex;align-items:center;gap:8px;padding:8px 16px;background:rgba(200,168,112,.1);border:1px solid rgba(200,168,112,.25);border-radius:3px;text-decoration:none;transition:all .3s}
+.footer-social a:hover{background:rgba(200,168,112,.2);border-color:var(--gold)}
+.footer-social span{font-size:12px;font-weight:400;color:var(--gold-light);letter-spacing:.04em}
+.footer-links{display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start}
+.footer-links a{font-size:12px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--gold)}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-copy{font-size:12px;font-weight:300;color:rgba(255,255,255,.3)}
+.footer-rgpd{font-size:11px;font-weight:300;color:rgba(255,255,255,.25);max-width:500px;line-height:1.5}
+.footer-rgpd a{color:rgba(200,168,112,.6);text-decoration:underline}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+
+@media(max-width:900px){
+  nav{padding:0 24px}
+  .nav-links{display:none}
+  #hero,#problema,#servicios,#nosotros,#contacto,footer{padding:80px 24px}
+  .hero-content{padding:120px 0 80px}
+  .hero-stats{position:static;flex-direction:row;gap:24px;margin-top:48px}
+  .hero-stat{text-align:left}
+  .nosotros-inner,.contact-inner{grid-template-columns:1fr;gap:48px}
+  .nosotros-box{aspect-ratio:16/9}
+  .form-grid{grid-template-columns:1fr}
+  .form-group.full,.rgpd-group,.form-submit,.form-note{grid-column:auto}
+  footer{padding:40px 24px}
+  .footer-top{flex-direction:column;gap:24px}
+  .lang-toggle{top:14px;right:14px}
+  .scroll-indicator,.hero-lines{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+  <button class="lang-btn active" onclick="setLang('es')" id="btn-es">ES</button>
+  <button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button>
+  <button class="lang-btn" onclick="setLang('va')" id="btn-va">VAL</button>
+</div>
+
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">Gobern<span>IA</span></a>
+  <ul class="nav-links">
+    <li><a href="#servicios" data-es="Servicios" data-en="Services" data-va="Serveis">Servicios</a></li>
+    <li><a href="#nosotros" data-es="Quiénes Somos" data-en="About Us" data-va="Qui Som">Quiénes Somos</a></li>
+    <li><a href="#contacto" class="nav-cta" data-es="Consulta Gratuita" data-en="Free Consultation" data-va="Consulta Gratuïta">Consulta Gratuita</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-content">
+    <div class="hero-label" data-es="Consultoría Especializada · España" data-en="Specialist Consultancy · Spain" data-va="Consultoria Especialitzada · Espanya">Consultoría Especializada · España</div>
+    <h1 class="hero-title">
+      <span data-es="Tu Equipo" data-en="Your Specialist" data-va="El Teu Equip">Tu Equipo</span><br>
+      <em data-es="Especializado" data-en="Team" data-va="Especialitzat">Especializado</em><br>
+      <span data-es="en Contratación Pública" data-en="in Public Procurement" data-va="en Contractació Pública">en Contratación Pública</span>
+    </h1>
+    <p class="hero-subtitle" data-es="Excelencia y Optimización" data-en="Excellence and Optimisation" data-va="Excel·lència i Optimització">Excelencia y Optimización</p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn-primary" data-es="Solicitar Consulta Gratuita →" data-en="Request Free Consultation →" data-va="Sol·licitar Consulta Gratuïta →">Solicitar Consulta Gratuita →</a>
+      <a href="#servicios" class="btn-secondary" data-es="Ver Servicios" data-en="Our Services" data-va="Veure Serveis">Ver Servicios</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num">3</div>
+      <div class="hero-stat-label" data-es="Áreas de Especialización" data-en="Areas of Expertise" data-va="Àrees d'Especialització">Áreas de Especialización</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">100%</div>
+      <div class="hero-stat-label" data-es="Orientado a Resultados" data-en="Results-Oriented" data-va="Orientat a Resultats">Orientado a Resultados</div>
+    </div>
+  </div>
+  <div class="scroll-indicator"><div class="scroll-line"></div><span data-es="Descubrir" data-en="Discover" data-va="Descobrir">Descubrir</span></div>
+</section>
+
+<!-- PROBLEMA -->
+<section id="problema">
+  <div class="section-header reveal">
+    <div class="section-tag" data-es="El Problema" data-en="The Challenge" data-va="El Problema">El Problema</div>
+    <h2 class="section-title"><span data-es="Los retos que frenan" data-en="The challenges holding back" data-va="Els reptes que frenen">Los retos que frenan</span><br><strong data-es="a tu organización" data-en="your organisation" data-va="la teua organització">a tu organización</strong></h2>
+  </div>
+  <div class="problems-grid">
+    <div class="problem-card reveal reveal-delay-1">
+      <div class="problem-num">01</div>
+      <div class="problem-title" data-es="No saber cómo licitar" data-en="Not knowing how to tender" data-va="No saber com licitar">No saber cómo licitar</div>
+      <div class="problem-desc" data-es="La contratación pública es compleja y cambia constantemente. Sin experiencia especializada, las oportunidades se pierden o las ofertas son desestimadas por errores evitables." data-en="Public procurement is complex and constantly evolving. Without specialist expertise, opportunities are missed or bids rejected due to avoidable errors." data-va="La contractació pública és complexa i canvia constantment. Sense experiència especialitzada, les oportunitats es perden o les ofertes són desestimades per errors evitables.">La contratación pública es compleja y cambia constantemente. Sin experiencia especializada, las oportunidades se pierden o las ofertas son desestimadas por errores evitables.</div>
+    </div>
+    <div class="problem-card reveal reveal-delay-2">
+      <div class="problem-num">02</div>
+      <div class="problem-title" data-es="Subvenciones disponibles sin aprovechar" data-en="Available grants going untapped" data-va="Subvencions disponibles sense aprofitar">Subvenciones disponibles sin aprovechar</div>
+      <div class="problem-desc" data-es="Existen ayudas públicas diseñadas para tu sector, pero identificarlas, solicitarlas y gestionarlas correctamente requiere tiempo y conocimiento especializado que no siempre están disponibles internamente." data-en="Public grants exist for your sector, but identifying, applying for and managing them correctly requires time and specialist knowledge not always available internally." data-va="Existeixen ajudes públiques dissenyades per al teu sector, però identificar-les, sol·licitar-les i gestionar-les correctament requereix temps i coneixement especialitzat.">Existen ayudas públicas diseñadas para tu sector, pero identificarlas, solicitarlas y gestionarlas correctamente requiere tiempo y conocimiento especializado que no siempre están disponibles internamente.</div>
+    </div>
+    <div class="problem-card reveal reveal-delay-3">
+      <div class="problem-num">03</div>
+      <div class="problem-title" data-es="Falta de personal administrativo cualificado" data-en="Lack of qualified administrative staff" data-va="Falta de personal administratiu qualificat">Falta de personal administrativo cualificado</div>
+      <div class="problem-desc" data-es="La gestión normativa exige perfiles altamente especializados. La escasez de talento cualificado y los costes de formación continua lastran la competitividad de muchas organizaciones." data-en="Regulatory management demands highly specialised profiles. The scarcity of qualified talent and training costs hinder the competitiveness of many organisations." data-va="La gestió normativa exigeix perfils altament especialitzats. L'escassetat de talent qualificat i els costos de formació contínua lastregen la competitivitat.">La gestión normativa exige perfiles altamente especializados. La escasez de talento cualificado y los costes de formación continua lastran la competitividad de muchas organizaciones.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="section-header reveal">
+    <div class="section-tag" data-es="Nuestros Servicios" data-en="Our Services" data-va="Els Nostres Serveis">Nuestros Servicios</div>
+    <h2 class="section-title"><span data-es="Soluciones diseñadas" data-en="Solutions designed" data-va="Solucions dissenyades">Soluciones diseñadas</span><br><strong data-es="para que ganes" data-en="for you to succeed" data-va="perquè guanyes">para que ganes</strong></h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-icon">🏛️</div>
+      <h3 class="service-title" data-es="Contratación Pública" data-en="Public Procurement" data-va="Contractació Pública">Contratación Pública</h3>
+      <p class="service-desc" data-es="Asesoramiento integral en licitaciones, desde la detección de oportunidades hasta la adjudicación. Maximizamos tus posibilidades de éxito minimizando el riesgo normativo." data-en="Comprehensive tendering advice from opportunity detection through to award. We maximise your chances of success while minimising regulatory risk." data-va="Assessorament integral en licitacions, des de la detecció d'oportunitats fins a l'adjudicació.">Asesoramiento integral en licitaciones, desde la detección de oportunidades hasta la adjudicación. Maximizamos tus posibilidades de éxito minimizando el riesgo normativo.</p>
+      <ul class="service-features">
+        <li data-es="Análisis y detección de oportunidades en PLACE" data-en="Opportunity analysis and detection on PLACE" data-va="Anàlisi i detecció d'oportunitats en PLACE">Análisis y detección de oportunidades en PLACE</li>
+        <li data-es="Expertos en arquitectura de sobres: Sobre A (administrativo), B (técnico) y C (económico)" data-en="Expert envelope architecture: Envelope A (administrative), B (technical) and C (economic)" data-va="Experts en arquitectura de sobres: Sobre A, B i C">Expertos en arquitectura de sobres: Sobre A (administrativo), B (técnico) y C (económico)</li>
+        <li data-es="Preparación de ofertas técnicas y económicas ganadoras" data-en="Preparation of winning technical and economic bids" data-va="Preparació d'ofertes tècniques i econòmiques guanyadores">Preparación de ofertas técnicas y económicas ganadoras</li>
+        <li data-es="Cumplimiento LCSP, ROLECE y normativa vigente" data-en="LCSP, ROLECE and current regulatory compliance" data-va="Compliment LCSP, ROLECE i normativa vigent">Cumplimiento LCSP, ROLECE y normativa vigente</li>
+        <li data-es="Gestión de recursos y reclamaciones" data-en="Appeal and claims management" data-va="Gestió de recursos i reclamacions">Gestión de recursos y reclamaciones</li>
+      </ul>
+    </div>
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-icon">💶</div>
+      <h3 class="service-title" data-es="Subvenciones y Ayudas Públicas" data-en="Grants & Public Funding" data-va="Subvencions i Ajudes Públiques">Subvenciones y Ayudas Públicas</h3>
+      <p class="service-desc" data-es="Identificamos, solicitamos y gestionamos las ayudas públicas más adecuadas para tu organización. Cubrimos el ciclo completo: desde la convocatoria hasta la justificación final ante la administración." data-en="We identify, apply for and manage the most suitable public funding for your organisation, covering the full cycle from call to final justification." data-va="Identifiquem, sol·licitem i gestionem les ajudes públiques més adequades. Cobrim el cicle complet: des de la convocatòria fins a la justificació final.">Identificamos, solicitamos y gestionamos las ayudas públicas más adecuadas para tu organización. Cubrimos el ciclo completo: desde la convocatoria hasta la justificación final ante la administración.</p>
+      <ul class="service-features">
+        <li data-es="Mapa personalizado de subvenciones disponibles para tu perfil y sector" data-en="Personalised map of available grants for your profile and sector" data-va="Mapa personalitzat de subvencions disponibles per al teu perfil i sector">Mapa personalizado de subvenciones disponibles para tu perfil y sector</li>
+        <li data-es="Redacción y presentación de solicitudes" data-en="Drafting and submission of applications" data-va="Redacció i presentació de sol·licituds">Redacción y presentación de solicitudes</li>
+        <li data-es="Seguimiento, justificación técnica y económica ante la administración" data-en="Follow-up, technical and financial justification before the administration" data-va="Seguiment, justificació tècnica i econòmica davant l'administració">Seguimiento, justificación técnica y económica ante la administración</li>
+        <li data-es="Next Generation EU y fondos europeos" data-en="Next Generation EU and European funds" data-va="Next Generation EU i fons europeus">Next Generation EU y fondos europeos</li>
+        <li data-es="Apoyo ante auditorías y requerimientos de la administración" data-en="Support in audits and administrative requirements" data-va="Suport davant auditories i requeriments de l'administració">Apoyo ante auditorías y requerimientos de la administración</li>
+      </ul>
+    </div>
+    <div class="service-card reveal reveal-delay-3">
+      <div class="service-icon">🤖</div>
+      <h3 class="service-title" data-es="Integración de IA Administrativa" data-en="Administrative AI Integration" data-va="Integració d'IA Administrativa">Integración de IA Administrativa</h3>
+      <p class="service-desc" data-es="Implementamos soluciones de Inteligencia Artificial que automatizan y optimizan los procesos administrativos de tu organización, reduciendo tiempos y costes operativos." data-en="We implement AI solutions that automate and optimise your organisation's administrative processes, reducing time and operational costs." data-va="Implementem solucions d'IA que automatitzen i optimitzen els processos administratius, reduint temps i costos operatius.">Implementamos soluciones de Inteligencia Artificial que automatizan y optimizan los procesos administrativos de tu organización, reduciendo tiempos y costes operativos.</p>
+      <ul class="service-features">
+        <li data-es="Automatización de tareas repetitivas y documentación" data-en="Automation of repetitive tasks and documentation" data-va="Automatització de tasques repetitives i documentació">Automatización de tareas repetitivas y documentación</li>
+        <li data-es="Análisis inteligente de pliegos y convocatorias" data-en="Intelligent analysis of tender documents and calls" data-va="Anàlisi intel·ligent de plecs i convocatòries">Análisis inteligente de pliegos y convocatorias</li>
+        <li data-es="Dashboards y reporting automatizado" data-en="Dashboards and automated reporting" data-va="Dashboards i reporting automatitzat">Dashboards y reporting automatizado</li>
+        <li data-es="Formación y acompañamiento en adopción tecnológica" data-en="Training and support in technology adoption" data-va="Formació i acompanyament en adopció tecnològica">Formación y acompañamiento en adopción tecnológica</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- QUIÉNES SOMOS -->
+<section id="nosotros">
+  <div class="nosotros-inner">
+    <div class="nosotros-visual reveal">
+      <div class="nosotros-box"><div class="nosotros-monogram">G</div></div>
+      <div class="nosotros-accent"></div>
+    </div>
+    <div class="nosotros-text">
+      <div class="section-header reveal">
+        <div class="section-tag" data-es="Quiénes Somos" data-en="About Us" data-va="Qui Som">Quiénes Somos</div>
+        <h2 class="section-title"><span data-es="Expertos al servicio" data-en="Experts at the service" data-va="Experts al servei">Expertos al servicio</span><br><strong data-es="de tu organización" data-en="of your organisation" data-va="de la teua organització">de tu organización</strong></h2>
+      </div>
+      <p class="nosotros-body reveal" data-es="GobernIA es una consultora especializada en contratación pública, subvenciones e integración de inteligencia artificial en la gestión administrativa. Trabajamos con organizaciones del sector público y privado que necesitan un equipo experto, ágil y orientado a resultados para navegar la complejidad normativa y aprovechar al máximo las oportunidades que ofrece la administración.
+
+Nuestro enfoque combina el rigor técnico y el conocimiento exhaustivo de la normativa vigente con el uso inteligente de la tecnología. No somos una consultora convencional: somos el equipo especializado que tu organización necesita, sin los costes de una estructura interna permanente." data-en="GobernIA is a consultancy specialising in public procurement, grants and AI integration in administrative management. We work with public and private sector organisations that need an expert, agile, results-oriented team to navigate regulatory complexity and make the most of the opportunities the administration offers.
+
+Our approach combines technical rigour and exhaustive knowledge of current regulations with the intelligent use of technology. We are not a conventional consultancy: we are the specialist team your organisation needs, without the costs of a permanent in-house structure." data-va="GobernIA és una consultora especialitzada en contractació pública, subvencions i integració d'intel·ligència artificial en la gestió administrativa. Treballem amb organitzacions del sector públic i privat.">
+        GobernIA es una consultora especializada en contratación pública, subvenciones e integración de inteligencia artificial en la gestión administrativa. Trabajamos con organizaciones del sector público y privado que necesitan un equipo experto, ágil y orientado a resultados para navegar la complejidad normativa y aprovechar al máximo las oportunidades que ofrece la administración.<br><br>Nuestro enfoque combina el rigor técnico y el conocimiento exhaustivo de la normativa vigente con el uso inteligente de la tecnología. No somos una consultora convencional: somos el equipo especializado que tu organización necesita, sin los costes de una estructura interna permanente.
+      </p>
+      <div class="nosotros-values reveal">
+        <div class="value-item"><div><div class="value-title" data-es="Rigor Normativo" data-en="Regulatory Rigour" data-va="Rigor Normatiu">Rigor Normativo</div><div class="value-desc" data-es="Conocimiento profundo y actualizado de LCSP, Ley 38/2003 y normativa europea." data-en="Deep and current knowledge of LCSP, Law 38/2003 and European regulations." data-va="Coneixement profund i actualitzat de LCSP, Llei 38/2003 i normativa europea.">Conocimiento profundo y actualizado de LCSP, Ley 38/2003 y normativa europea.</div></div></div>
+        <div class="value-item"><div><div class="value-title" data-es="Orientación a Resultados" data-en="Results-Oriented" data-va="Orientació a Resultats">Orientación a Resultados</div><div class="value-desc" data-es="Cada proyecto se mide por el impacto real y tangible que genera en tu organización." data-en="Every project is measured by the real, tangible impact it generates for your organisation." data-va="Cada projecte es mesura per l'impacte real i tangible que genera en la teua organització.">Cada proyecto se mide por el impacto real y tangible que genera en tu organización.</div></div></div>
+        <div class="value-item"><div><div class="value-title" data-es="Innovación Tecnológica" data-en="Technological Innovation" data-va="Innovació Tecnològica">Innovación Tecnológica</div><div class="value-desc" data-es="Integramos la IA como palanca de eficiencia, no como moda pasajera." data-en="We integrate AI as a lever for efficiency, not as a passing trend." data-va="Integrem la IA com a palanca d'eficiència, no com una moda passatgera.">Integramos la IA como palanca de eficiencia, no como moda pasajera.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <div class="section-header reveal">
+        <div class="section-tag" data-es="Contacto" data-en="Contact" data-va="Contacte">Contacto</div>
+        <h2 class="section-title"><span data-es="Hablemos de" data-en="Let's talk about" data-va="Parlem de">Hablemos de</span><br><strong data-es="tu proyecto" data-en="your project" data-va="el teu projecte">tu proyecto</strong></h2>
+      </div>
+      <p class="contact-body reveal" data-es="Primera consulta gratuita y sin compromiso. Cuéntanos tu situación y te diremos exactamente cómo podemos ayudarte." data-en="First consultation free and with no obligation. Tell us your situation and we will tell you exactly how we can help." data-va="Primera consulta gratuïta i sense compromís. Explica'ns la teua situació i et direm exactament com podem ajudar-te.">Primera consulta gratuita y sin compromiso. Cuéntanos tu situación y te diremos exactamente cómo podemos ayudarte.</p>
+      <div class="contact-details reveal">
+        <div class="contact-detail">
+          <div class="contact-detail-icon">✉️</div>
+          <div class="contact-detail-text"><strong data-es="Email" data-en="Email" data-va="Email">Email</strong><span>gobernia@goberconsult.com</span></div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">🌐</div>
+          <div class="contact-detail-text"><strong data-es="Web" data-en="Web" data-va="Web">Web</strong><span>goberconsult.com</span></div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon">📍</div>
+          <div class="contact-detail-text"><strong data-es="Cobertura" data-en="Coverage" data-va="Cobertura">Cobertura</strong><span data-es="España · Servicio en todo el territorio nacional" data-en="Spain · Service throughout the national territory" data-va="Espanya · Servei a tot el territori nacional">España · Servicio en todo el territorio nacional</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form reveal">
+      <div id="form-content">
+        <h3 class="form-title" data-es="Solicitar Consulta Gratuita" data-en="Request Free Consultation" data-va="Sol·licitar Consulta Gratuïta">Solicitar Consulta Gratuita</h3>
+        <div class="form-grid">
+          <div class="form-group"><label data-es="Nombre *" data-en="Name *" data-va="Nom *">Nombre *</label><input type="text" id="f-nombre" required></div>
+          <div class="form-group"><label data-es="Empresa" data-en="Company" data-va="Empresa">Empresa</label><input type="text" id="f-empresa"></div>
+          <div class="form-group"><label data-es="Email *" data-en="Email *" data-va="Email *">Email *</label><input type="email" id="f-email" required></div>
+          <div class="form-group"><label data-es="Teléfono" data-en="Phone" data-va="Telèfon">Teléfono</label><input type="tel" id="f-telefono"></div>
+          <div class="form-group full">
+            <label data-es="Servicio de interés" data-en="Service of interest" data-va="Servei d'interès">Servicio de interés</label>
+            <select id="f-servicio">
+              <option value="" data-es="Selecciona un servicio..." data-en="Select a service..." data-va="Selecciona un servei...">Selecciona un servicio...</option>
+              <option value="contratacion" data-es="Contratación Pública" data-en="Public Procurement" data-va="Contractació Pública">Contratación Pública</option>
+              <option value="subvenciones" data-es="Subvenciones y Ayudas Públicas" data-en="Grants & Public Funding" data-va="Subvencions i Ajudes Públiques">Subvenciones y Ayudas Públicas</option>
+              <option value="ia" data-es="Integración de IA administrativa" data-en="Administrative AI Integration" data-va="Integració d'IA administrativa">Integración de IA administrativa</option>
+              <option value="varios" data-es="Varios servicios" data-en="Multiple services" data-va="Diversos serveis">Varios servicios</option>
+            </select>
+          </div>
+          <div class="form-group full"><label data-es="Mensaje" data-en="Message" data-va="Missatge">Mensaje</label><textarea id="f-mensaje" rows="4"></textarea></div>
+          <div class="rgpd-group">
+            <input type="checkbox" id="f-rgpd" required>
+            <div class="rgpd-text" id="rgpd-text">He leído y acepto la <a href="privacidad.html" target="_blank" rel="noopener">Política de Privacidad</a>. Mis datos serán tratados por GobernIA conforme al <strong>Reglamento (UE) 2016/679 (RGPD)</strong> y la Ley Orgánica 3/2018 (LOPDGDD). No serán cedidos a terceros.</div>
+          </div>
+          <div class="form-submit"><button type="button" onclick="submitForm()"><span data-es="Enviar Consulta Gratuita →" data-en="Send Free Consultation →" data-va="Enviar Consulta Gratuïta →">Enviar Consulta Gratuita →</span></button></div>
+          <div class="form-note"><span data-es="Primera consulta siempre gratuita · Respuesta en menos de 24h" data-en="First consultation always free · Response within 24h" data-va="Primera consulta sempre gratuïta · Resposta en menys de 24h">Primera consulta siempre gratuita · Respuesta en menos de 24h</span></div>
+        </div>
+      </div>
+      <div class="form-success" id="form-success">
+        <div class="form-success-icon">✅</div>
+        <h3 data-es="¡Consulta recibida!" data-en="Consultation received!" data-va="Consulta rebuda!">¡Consulta recibida!</h3>
+        <p data-es="Nos pondremos en contacto contigo en menos de 24 horas. Si lo prefieres, reserva directamente una cita:" data-en="We will get in touch within 24 hours. Prefer to book directly?" data-va="Ens posarem en contacte amb tu en menys de 24 hores. Si ho prefereixes, reserva directament:">Nos pondremos en contacto contigo en menos de 24 horas. Si lo prefieres, reserva directamente una cita:</p>
+        <a href="INSERTAR_LINK_GOOGLE_CALENDAR" class="btn-calendar">
+          <span>📅</span>
+          <span data-es="Reservar cita en Google Calendar →" data-en="Book a slot in Google Calendar →" data-va="Reservar cita en Google Calendar →">Reservar cita en Google Calendar →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">Gobern<span>IA</span></div>
+      <div class="footer-tagline" data-es="Excelencia y Optimización en Contratación Pública" data-en="Excellence and Optimisation in Public Procurement" data-va="Excel·lència i Optimització en Contractació Pública">Excelencia y Optimización en Contratación Pública</div>
+      <div class="footer-social">
+        <a href="INSERTAR_LINK_INSTAGRAM" target="_blank" rel="noopener">
+          <span>📸</span>
+          <span>@gobernIA</span>
+        </a>
+        <a href="INSERTAR_LINK_LINKEDIN" target="_blank" rel="noopener">
+          <span>💼</span>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="#servicios" data-es="Servicios" data-en="Services" data-va="Serveis">Servicios</a>
+      <a href="#nosotros" data-es="Quiénes Somos" data-en="About Us" data-va="Qui Som">Quiénes Somos</a>
+      <a href="#contacto" data-es="Contacto" data-en="Contact" data-va="Contacte">Contacto</a>
+      <a href="aviso-legal.html" target="_blank" data-es="Aviso Legal" data-en="Legal Notice" data-va="Avís Legal">Aviso Legal</a>
+      <a href="privacidad.html" target="_blank" data-es="Política de Privacidad" data-en="Privacy Policy" data-va="Política de Privacitat">Política de Privacidad</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 GobernIA · Stephanie Prendes Ferrer · NIF 04340956M</div>
+    <div class="footer-rgpd">
+      <span data-es="Los datos facilitados serán tratados conforme al RGPD (UE) 2016/679 y la LOPDGDD. " data-en="Data provided will be processed in accordance with GDPR (EU) 2016/679. " data-va="Les dades facilitades seran tractades conforme al RGPD. ">Los datos facilitados serán tratados conforme al RGPD (UE) 2016/679 y la LOPDGDD. </span><a href="privacidad.html" target="_blank" data-es="Política de Privacidad." data-en="Privacy Policy." data-va="Política de Privacitat.">Política de Privacidad.</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+let currentLang='es';
+const RGPD={
+  es:'He leído y acepto la <a href="privacidad.html" target="_blank" rel="noopener">Política de Privacidad</a>. Mis datos serán tratados por GobernIA conforme al <strong>Reglamento (UE) 2016/679 (RGPD)</strong> y la Ley Orgánica 3/2018 (LOPDGDD). No serán cedidos a terceros.',
+  en:'I have read and accept the <a href="privacidad.html" target="_blank">Privacy Policy</a>. My data will be processed by GobernIA in accordance with <strong>Regulation (EU) 2016/679 (GDPR)</strong> and the LOPDGDD. It will not be shared with third parties.',
+  va:"He llegit i accepte la <a href='privacidad.html' target='_blank'>Política de Privacitat</a>. Les meues dades seran tractades per GobernIA conforme al <strong>Reglament (UE) 2016/679 (RGPD)</strong> i la LOPDGDD. No seran cedides a tercers."
+};
+function setLang(lang){
+  currentLang=lang;
+  ['es','en','va'].forEach(l=>document.getElementById('btn-'+l).classList.toggle('active',l===lang));
+  document.querySelectorAll('[data-'+lang+']').forEach(el=>{el.textContent=el.getAttribute('data-'+lang);});
+  document.querySelectorAll('select option[data-'+lang+']').forEach(opt=>{opt.textContent=opt.getAttribute('data-'+lang);});
+  document.getElementById('rgpd-text').innerHTML=RGPD[lang];
+  document.documentElement.lang=lang==='va'?'ca-ES':lang==='es'?'es-ES':'en';
+}
+window.addEventListener('scroll',()=>{document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>60);});
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+const FORM_URL='https://docs.google.com/forms/d/e/1FAIpQLSfektgP5w8wGAr-1zxcOBGZWpho7s8G8YZK6L7ZCnOEvfr7_Q/viewform';
+
+// IDs de los campos del Google Form (entry.XXXXXXX)
+// Estos se obtienen inspeccionando el formulario — usamos URL con parámetros prefilled
+function buildFormURL(){
+  const nombre   = encodeURIComponent(document.getElementById('f-nombre').value.trim());
+  const empresa  = encodeURIComponent(document.getElementById('f-empresa').value.trim());
+  const email    = encodeURIComponent(document.getElementById('f-email').value.trim());
+  const telefono = encodeURIComponent(document.getElementById('f-telefono').value.trim());
+  const servicio = encodeURIComponent(document.getElementById('f-servicio').value);
+  const mensaje  = encodeURIComponent(document.getElementById('f-mensaje').value.trim());
+  // Abre el form con datos pre-rellenados si Google Form tiene entry IDs configurados
+  // Por ahora abre el form limpio — el usuario ve sus datos en el form de Google
+  return FORM_URL;
+}
+
+function submitForm(){
+  const nombre=document.getElementById('f-nombre').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  const rgpd=document.getElementById('f-rgpd').checked;
+  const msgs={
+    es:['Por favor, completa Nombre y Email.','Debes aceptar la Política de Privacidad para continuar.'],
+    en:['Please fill in Name and Email.','You must accept the Privacy Policy to continue.'],
+    va:["Si us plau, omple Nom i Email.","Has d'acceptar la Política de Privacitat per continuar."]
+  };
+  if(!nombre||!email){alert(msgs[currentLang][0]);return;}
+  if(!rgpd){alert(msgs[currentLang][1]);return;}
+
+  // Guardar datos en sessionStorage para mostrarlos en el mensaje de éxito
+  sessionStorage.setItem('gob_nombre', nombre);
+  sessionStorage.setItem('gob_email', email);
+
+  // Abrir Google Form en nueva pestaña
+  window.open(FORM_URL, '_blank');
+
+  // Mostrar mensaje de confirmación en la landing
+  document.getElementById('form-content').style.display='none';
+  document.getElementById('form-success').style.display='block';
+  setLang(currentLang);
+}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}
+  });
+});
+</script>
+</body>
+</html>
