@@ -126,11 +126,12 @@ input:focus,select:focus,textarea:focus{border-color:var(--green-main);box-shado
 textarea{resize:vertical;min-height:110px}
 select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234A7C5F' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
 
-.rgpd-group{grid-column:1/-1;display:flex;align-items:center;gap:16px;padding:18px 18px;background:var(--ivory);border:1px solid #E0E5E1;border-radius:2px;cursor:pointer;user-select:none;-webkit-user-select:none}
+label.rgpd-group{grid-column:1/-1;display:flex;align-items:center;gap:16px;padding:18px 18px;background:var(--ivory);border:1px solid #E0E5E1;border-radius:2px;cursor:pointer;user-select:none;-webkit-user-select:none}
 .rgpd-group input[type="checkbox"]{position:absolute;opacity:0;width:0;height:0}
 .rgpd-custom{width:44px;height:44px;min-width:44px;border:2px solid var(--green-main);border-radius:6px;display:flex;align-items:center;justify-content:center;background:white;transition:all .2s;flex-shrink:0;margin-top:0;touch-action:manipulation}
 .rgpd-custom svg{display:none}
-.rgpd-group.checked .rgpd-custom{background:var(--green-main);border-color:var(--green-main)}
+label.rgpd-group input[type="checkbox"]:checked ~ .rgpd-custom{background:var(--green-main);border-color:var(--green-main)}
+label.rgpd-group input[type="checkbox"]:checked ~ .rgpd-custom svg{display:block}
 .rgpd-group.checked .rgpd-custom svg{display:block;width:24px;height:24px}
 .rgpd-text{font-size:12px;font-weight:300;line-height:1.6;color:var(--text-mid);text-transform:none;letter-spacing:0;flex:1}
 .rgpd-text a{color:var(--green-main);text-decoration:underline}
@@ -384,15 +385,15 @@ Our approach combines technical rigour and exhaustive knowledge of current regul
             </select>
           </div>
           <div class="form-group full"><label data-es="Mensaje" data-en="Message" data-va="Missatge">Mensaje</label><textarea id="f-mensaje" rows="4"></textarea></div>
-          <div class="rgpd-group" id="rgpd-group" onclick="toggleRgpd()">
+          <label class="rgpd-group" for="f-rgpd" id="rgpd-group">
             <input type="checkbox" id="f-rgpd">
             <div class="rgpd-custom" id="rgpd-custom">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8l3.5 3.5L13 5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <div class="rgpd-text" id="rgpd-text">He leído y acepto la <a href="privacidad.html" target="_blank" rel="noopener" onclick="event.stopPropagation()">Política de Privacidad</a>. Mis datos serán tratados por GobernIA conforme al <strong>Reglamento (UE) 2016/679 (RGPD)</strong> y la Ley Orgánica 3/2018 (LOPDGDD). No serán cedidos a terceros.</div>
-          </div>
+            <div class="rgpd-text" id="rgpd-text">He leído y acepto la <a href="privacidad.html" target="_blank" rel="noopener">Política de Privacidad</a>. Mis datos serán tratados por GobernIA conforme al <strong>Reglamento (UE) 2016/679 (RGPD)</strong> y la Ley Orgánica 3/2018 (LOPDGDD). No serán cedidos a terceros.</div>
+          </label>
           <div class="form-submit"><button type="button" onclick="submitForm()"><span data-es="Enviar Consulta Gratuita →" data-en="Send Free Consultation →" data-va="Enviar Consulta Gratuïta →">Enviar Consulta Gratuita →</span></button></div>
           <div class="form-note"><span data-es="Primera consulta siempre gratuita · Respuesta en menos de 24h" data-en="First consultation always free · Response within 24h" data-va="Primera consulta sempre gratuïta · Resposta en menys de 24h">Primera consulta siempre gratuita · Respuesta en menos de 24h</span></div>
         </div>
@@ -475,13 +476,6 @@ function buildFormURL(){
   // Abre el form con datos pre-rellenados si Google Form tiene entry IDs configurados
   // Por ahora abre el form limpio — el usuario ve sus datos en el form de Google
   return FORM_URL;
-}
-
-function toggleRgpd(){
-  const group = document.getElementById('rgpd-group');
-  const cb = document.getElementById('f-rgpd');
-  cb.checked = !cb.checked;
-  group.classList.toggle('checked', cb.checked);
 }
 
 function submitForm(){
