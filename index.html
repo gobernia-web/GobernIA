@@ -126,13 +126,13 @@ input:focus,select:focus,textarea:focus{border-color:var(--green-main);box-shado
 textarea{resize:vertical;min-height:110px}
 select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234A7C5F' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
 
-.rgpd-group{grid-column:1/-1;display:flex;align-items:flex-start;gap:14px;padding:16px 18px;background:var(--ivory);border:1px solid #E0E5E1;border-radius:2px;cursor:pointer}
+.rgpd-group{grid-column:1/-1;display:flex;align-items:center;gap:16px;padding:18px 18px;background:var(--ivory);border:1px solid #E0E5E1;border-radius:2px;cursor:pointer;user-select:none;-webkit-user-select:none}
 .rgpd-group input[type="checkbox"]{position:absolute;opacity:0;width:0;height:0}
-.rgpd-custom{width:28px;height:28px;min-width:28px;border:2px solid var(--green-main);border-radius:4px;display:flex;align-items:center;justify-content:center;background:white;transition:all .2s;flex-shrink:0;margin-top:0}
+.rgpd-custom{width:44px;height:44px;min-width:44px;border:2px solid var(--green-main);border-radius:6px;display:flex;align-items:center;justify-content:center;background:white;transition:all .2s;flex-shrink:0;margin-top:0;touch-action:manipulation}
 .rgpd-custom svg{display:none}
 .rgpd-group.checked .rgpd-custom{background:var(--green-main);border-color:var(--green-main)}
-.rgpd-group.checked .rgpd-custom svg{display:block}
-.rgpd-text{font-size:13px;font-weight:300;line-height:1.6;color:var(--text-mid);text-transform:none;letter-spacing:0}
+.rgpd-group.checked .rgpd-custom svg{display:block;width:24px;height:24px}
+.rgpd-text{font-size:12px;font-weight:300;line-height:1.6;color:var(--text-mid);text-transform:none;letter-spacing:0;flex:1}
 .rgpd-text a{color:var(--green-main);text-decoration:underline}
 
 .form-submit{grid-column:1/-1;margin-top:8px}
