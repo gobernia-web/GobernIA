@@ -126,14 +126,13 @@ input:focus,select:focus,textarea:focus{border-color:var(--green-main);box-shado
 textarea{resize:vertical;min-height:110px}
 select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234A7C5F' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
 
-label.rgpd-group{grid-column:1/-1;display:flex;align-items:center;gap:16px;padding:18px 18px;background:var(--ivory);border:1px solid #E0E5E1;border-radius:2px;cursor:pointer;user-select:none;-webkit-user-select:none}
+.rgpd-group{grid-column:1/-1;display:flex;align-items:flex-start;gap:14px;padding:16px 18px;background:var(--ivory);border:1px solid #E0E5E1;border-radius:2px;cursor:pointer}
 .rgpd-group input[type="checkbox"]{position:absolute;opacity:0;width:0;height:0}
-.rgpd-custom{width:44px;height:44px;min-width:44px;border:2px solid var(--green-main);border-radius:6px;display:flex;align-items:center;justify-content:center;background:white;transition:all .2s;flex-shrink:0;margin-top:0;touch-action:manipulation}
+.rgpd-custom{width:28px;height:28px;min-width:28px;border:2px solid var(--green-main);border-radius:4px;display:flex;align-items:center;justify-content:center;background:white;transition:all .2s;flex-shrink:0;margin-top:0}
 .rgpd-custom svg{display:none}
-label.rgpd-group input[type="checkbox"]:checked ~ .rgpd-custom{background:var(--green-main);border-color:var(--green-main)}
-label.rgpd-group input[type="checkbox"]:checked ~ .rgpd-custom svg{display:block}
-.rgpd-group.checked .rgpd-custom svg{display:block;width:24px;height:24px}
-.rgpd-text{font-size:12px;font-weight:300;line-height:1.6;color:var(--text-mid);text-transform:none;letter-spacing:0;flex:1}
+.rgpd-group.checked .rgpd-custom{background:var(--green-main);border-color:var(--green-main)}
+.rgpd-group.checked .rgpd-custom svg{display:block}
+.rgpd-text{font-size:13px;font-weight:300;line-height:1.6;color:var(--text-mid);text-transform:none;letter-spacing:0}
 .rgpd-text a{color:var(--green-main);text-decoration:underline}
 
 .form-submit{grid-column:1/-1;margin-top:8px}
@@ -217,13 +216,13 @@ footer{padding:60px;background:var(--green-dark);border-top:1px solid rgba(200,1
   <div class="hero-bg"></div>
   <div class="hero-lines"></div>
   <div class="hero-content">
-    <div class="hero-label" data-es="Consultoría Integral · España" data-en="Full-Service Consultancy · Spain" data-va="Consultoria Integral · Espanya">Consultoría Integral · España</div>
+    <div class="hero-label" data-es="Consultoría Especializada · España" data-en="Specialist Consultancy · Spain" data-va="Consultoria Especialitzada · Espanya">Consultoría Especializada · España</div>
     <h1 class="hero-title">
-      <span data-es="Tu Equipo" data-en="Your" data-va="El Teu Equip">Tu Equipo</span><br>
-      <em data-es="Consultor Integral" data-en="Strategic Partner" data-va="Consultor Integral">Consultor Integral</em><br>
-      <span data-es="para tu Organización" data-en="for your Organisation" data-va="per a la teua Organització">para tu Organización</span>
+      <span data-es="Tu Equipo" data-en="Your Specialist" data-va="El Teu Equip">Tu Equipo</span><br>
+      <em data-es="Especializado" data-en="Team" data-va="Especialitzat">Especializado</em><br>
+      <span data-es="en Contratación Pública" data-en="in Public Procurement" data-va="en Contractació Pública">en Contratación Pública</span>
     </h1>
-    <p class="hero-subtitle" data-es="Contratación Pública · Subvenciones · Automatización" data-en="Procurement · Grants · Automation" data-va="Contractació · Subvencions · Automatització">Contratación Pública · Subvenciones · Automatización</p>
+    <p class="hero-subtitle" data-es="Excelencia y Optimización" data-en="Excellence and Optimisation" data-va="Excel·lència i Optimització">Excelencia y Optimización</p>
     <div class="hero-actions">
       <a href="#contacto" class="btn-primary" data-es="Solicitar Consulta Gratuita →" data-en="Request Free Consultation →" data-va="Sol·licitar Consulta Gratuïta →">Solicitar Consulta Gratuita →</a>
       <a href="#servicios" class="btn-secondary" data-es="Ver Servicios" data-en="Our Services" data-va="Veure Serveis">Ver Servicios</a>
@@ -264,7 +263,6 @@ footer{padding:60px;background:var(--green-dark);border-top:1px solid rgba(200,1
       <div class="problem-title" data-es="Falta de personal administrativo cualificado" data-en="Lack of qualified administrative staff" data-va="Falta de personal administratiu qualificat">Falta de personal administrativo cualificado</div>
       <div class="problem-desc" data-es="La gestión normativa exige perfiles altamente especializados. La escasez de talento cualificado y los costes de formación continua lastran la competitividad de muchas organizaciones." data-en="Regulatory management demands highly specialised profiles. The scarcity of qualified talent and training costs hinder the competitiveness of many organisations." data-va="La gestió normativa exigeix perfils altament especialitzats. L'escassetat de talent qualificat i els costos de formació contínua lastregen la competitivitat.">La gestión normativa exige perfiles altamente especializados. La escasez de talento cualificado y los costes de formación continua lastran la competitividad de muchas organizaciones.</div>
     </div>
-
   </div>
 </section>
 
@@ -310,7 +308,6 @@ footer{padding:60px;background:var(--green-dark);border-top:1px solid rgba(200,1
         <li data-es="Formación y acompañamiento en adopción tecnológica" data-en="Training and support in technology adoption" data-va="Formació i acompanyament en adopció tecnològica">Formación y acompañamiento en adopción tecnológica</li>
       </ul>
     </div>
-
   </div>
 </section>
 
@@ -326,12 +323,12 @@ footer{padding:60px;background:var(--green-dark);border-top:1px solid rgba(200,1
         <div class="section-tag" data-es="Quiénes Somos" data-en="About Us" data-va="Qui Som">Quiénes Somos</div>
         <h2 class="section-title"><span data-es="Expertos al servicio" data-en="Experts at the service" data-va="Experts al servei">Expertos al servicio</span><br><strong data-es="de tu organización" data-en="of your organisation" data-va="de la teua organització">de tu organización</strong></h2>
       </div>
-      <p class="nosotros-body reveal" data-es="GobernIA es una consultoría integral que combina experiencia en contratación pública, gestión de subvenciones, automatización de procesos e inteligencia artificial. Trabajamos con organizaciones del sector público y privado que necesitan un partner estratégico ágil, experto y orientado a resultados.
+      <p class="nosotros-body reveal" data-es="GobernIA es una consultora especializada en contratación pública, subvenciones e integración de inteligencia artificial en la gestión administrativa. Trabajamos con organizaciones del sector público y privado que necesitan un equipo experto, ágil y orientado a resultados para navegar la complejidad normativa y aprovechar al máximo las oportunidades que ofrece la administración.
 
 Nuestro enfoque combina el rigor técnico y el conocimiento exhaustivo de la normativa vigente con el uso inteligente de la tecnología. No somos una consultora convencional: somos el equipo especializado que tu organización necesita, sin los costes de una estructura interna permanente." data-en="GobernIA is a consultancy specialising in public procurement, grants and AI integration in administrative management. We work with public and private sector organisations that need an expert, agile, results-oriented team to navigate regulatory complexity and make the most of the opportunities the administration offers.
 
 Our approach combines technical rigour and exhaustive knowledge of current regulations with the intelligent use of technology. We are not a conventional consultancy: we are the specialist team your organisation needs, without the costs of a permanent in-house structure." data-va="GobernIA és una consultora especialitzada en contractació pública, subvencions i integració d'intel·ligència artificial en la gestió administrativa. Treballem amb organitzacions del sector públic i privat.">
-        GobernIA es una consultoría integral que combina experiencia en contratación pública, gestión de subvenciones, automatización de procesos e inteligencia artificial. Trabajamos con organizaciones del sector público y privado que necesitan un partner estratégico ágil, experto y orientado a resultados.<br><br>Desde ayudarte a ganar licitaciones y acceder a subvenciones, hasta automatizar tus procesos e implementar agentes de IA que trabajan por ti — somos el equipo completo que tu organización necesita, sin los costes de una estructura interna permanente.
+        GobernIA es una consultora especializada en contratación pública, subvenciones e integración de inteligencia artificial en la gestión administrativa. Trabajamos con organizaciones del sector público y privado que necesitan un equipo experto, ágil y orientado a resultados para navegar la complejidad normativa y aprovechar al máximo las oportunidades que ofrece la administración.<br><br>Nuestro enfoque combina el rigor técnico y el conocimiento exhaustivo de la normativa vigente con el uso inteligente de la tecnología. No somos una consultora convencional: somos el equipo especializado que tu organización necesita, sin los costes de una estructura interna permanente.
       </p>
       <div class="nosotros-values reveal">
         <div class="value-item"><div><div class="value-title" data-es="Rigor Normativo" data-en="Regulatory Rigour" data-va="Rigor Normatiu">Rigor Normativo</div><div class="value-desc" data-es="Conocimiento profundo y actualizado de LCSP, Ley 38/2003 y normativa europea." data-en="Deep and current knowledge of LCSP, Law 38/2003 and European regulations." data-va="Coneixement profund i actualitzat de LCSP, Llei 38/2003 i normativa europea.">Conocimiento profundo y actualizado de LCSP, Ley 38/2003 y normativa europea.</div></div></div>
@@ -357,6 +354,10 @@ Our approach combines technical rigour and exhaustive knowledge of current regul
           <div class="contact-detail-text"><strong data-es="Email" data-en="Email" data-va="Email">Email</strong><span>gobernia@goberconsult.com</span></div>
         </div>
         <div class="contact-detail">
+          <div class="contact-detail-icon">📱</div>
+          <div class="contact-detail-text"><strong>WhatsApp</strong><span><a href="https://wa.me/34601577175" target="_blank" rel="noopener" style="color:inherit;text-decoration:none">601 577 175</a></span></div>
+        </div>
+        <div class="contact-detail">
           <div class="contact-detail-icon">🌐</div>
           <div class="contact-detail-text"><strong data-es="Web" data-en="Web" data-va="Web">Web</strong><span>goberconsult.com</span></div>
         </div>
@@ -380,20 +381,20 @@ Our approach combines technical rigour and exhaustive knowledge of current regul
               <option value="" data-es="Selecciona un servicio..." data-en="Select a service..." data-va="Selecciona un servei...">Selecciona un servicio...</option>
               <option value="contratacion" data-es="Contratación Pública" data-en="Public Procurement" data-va="Contractació Pública">Contratación Pública</option>
               <option value="subvenciones" data-es="Subvenciones y Ayudas Públicas" data-en="Grants & Public Funding" data-va="Subvencions i Ajudes Públiques">Subvenciones y Ayudas Públicas</option>
-              <option value="ia" data-es="Automatización e Inteligencia Artificial" data-en="Automation &amp; AI" data-va="Automatització i Intel·ligència Artificial">Automatización e Inteligencia Artificial</option>
+              <option value="ia" data-es="Integración de IA administrativa" data-en="Administrative AI Integration" data-va="Integració d'IA administrativa">Integración de IA administrativa</option>
               <option value="varios" data-es="Varios servicios" data-en="Multiple services" data-va="Diversos serveis">Varios servicios</option>
             </select>
           </div>
           <div class="form-group full"><label data-es="Mensaje" data-en="Message" data-va="Missatge">Mensaje</label><textarea id="f-mensaje" rows="4"></textarea></div>
-          <label class="rgpd-group" for="f-rgpd" id="rgpd-group">
+          <div class="rgpd-group" id="rgpd-group" onclick="toggleRgpd()">
             <input type="checkbox" id="f-rgpd">
             <div class="rgpd-custom" id="rgpd-custom">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8l3.5 3.5L13 5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <div class="rgpd-text" id="rgpd-text">He leído y acepto la <a href="privacidad.html" target="_blank" rel="noopener">Política de Privacidad</a>. Mis datos serán tratados por GobernIA conforme al <strong>Reglamento (UE) 2016/679 (RGPD)</strong> y la Ley Orgánica 3/2018 (LOPDGDD). No serán cedidos a terceros.</div>
-          </label>
+            <div class="rgpd-text" id="rgpd-text">He leído y acepto la <a href="privacidad.html" target="_blank" rel="noopener" onclick="event.stopPropagation()">Política de Privacidad</a>. Mis datos serán tratados por GobernIA conforme al <strong>Reglamento (UE) 2016/679 (RGPD)</strong> y la Ley Orgánica 3/2018 (LOPDGDD). No serán cedidos a terceros.</div>
+          </div>
           <div class="form-submit"><button type="button" onclick="submitForm()"><span data-es="Enviar Consulta Gratuita →" data-en="Send Free Consultation →" data-va="Enviar Consulta Gratuïta →">Enviar Consulta Gratuita →</span></button></div>
           <div class="form-note"><span data-es="Primera consulta siempre gratuita · Respuesta en menos de 24h" data-en="First consultation always free · Response within 24h" data-va="Primera consulta sempre gratuïta · Resposta en menys de 24h">Primera consulta siempre gratuita · Respuesta en menos de 24h</span></div>
         </div>
@@ -402,9 +403,10 @@ Our approach combines technical rigour and exhaustive knowledge of current regul
         <div class="form-success-icon">✅</div>
         <h3 data-es="¡Consulta recibida!" data-en="Consultation received!" data-va="Consulta rebuda!">¡Consulta recibida!</h3>
         <p data-es="Nos pondremos en contacto contigo en menos de 24 horas. Si lo prefieres, reserva directamente una cita:" data-en="We will get in touch within 24 hours. Prefer to book directly?" data-va="Ens posarem en contacte amb tu en menys de 24 hores. Si ho prefereixes, reserva directament:">Nos pondremos en contacto contigo en menos de 24 horas. Si lo prefieres, reserva directamente una cita:</p>
-        <a href="INSERTAR_LINK_GOOGLE_CALENDAR" class="btn-calendar">
+        <!-- CITA: cuando tengas tu enlace de Cal.com, sustituye el mailto de abajo por esa URL -->
+        <a href="mailto:gobernia@goberconsult.com?subject=Solicitud%20de%20cita%20%E2%80%94%20GobernIA" class="btn-calendar">
           <span>📅</span>
-          <span data-es="Reservar cita en Google Calendar →" data-en="Book a slot in Google Calendar →" data-va="Reservar cita en Google Calendar →">Reservar cita en Google Calendar →</span>
+          <span data-es="Solicitar una cita →" data-en="Request an appointment →" data-va="Sol·licitar una cita →">Solicitar una cita →</span>
         </a>
       </div>
     </div>
@@ -418,14 +420,20 @@ Our approach combines technical rigour and exhaustive knowledge of current regul
       <div class="footer-logo">Gobern<span>IA</span></div>
       <div class="footer-tagline" data-es="Excelencia y Optimización en Contratación Pública" data-en="Excellence and Optimisation in Public Procurement" data-va="Excel·lència i Optimització en Contractació Pública">Excelencia y Optimización en Contratación Pública</div>
       <div class="footer-social">
-        <a href="https://www.instagram.com/gobern.ia/" target="_blank" rel="noopener">
+        <a href="https://www.instagram.com/gobern.ia" target="_blank" rel="noopener">
           <span>📸</span>
-          <span>@gobernIA</span>
+          <span>@gobern.ia</span>
         </a>
-        <a href="INSERTAR_LINK_LINKEDIN" target="_blank" rel="noopener">
+        <a href="https://wa.me/34601577175" target="_blank" rel="noopener">
+          <span>📱</span>
+          <span>WhatsApp</span>
+        </a>
+        <!-- LINKEDIN: descomenta este bloque y pon la URL cuando la página de empresa esté creada
+        <a href="URL_LINKEDIN" target="_blank" rel="noopener">
           <span>💼</span>
           <span>LinkedIn</span>
         </a>
+        -->
       </div>
     </div>
     <div class="footer-links">
@@ -476,6 +484,13 @@ function buildFormURL(){
   // Abre el form con datos pre-rellenados si Google Form tiene entry IDs configurados
   // Por ahora abre el form limpio — el usuario ve sus datos en el form de Google
   return FORM_URL;
+}
+
+function toggleRgpd(){
+  const group = document.getElementById('rgpd-group');
+  const cb = document.getElementById('f-rgpd');
+  cb.checked = !cb.checked;
+  group.classList.toggle('checked', cb.checked);
 }
 
 function submitForm(){
